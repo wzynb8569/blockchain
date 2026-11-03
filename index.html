@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>雪愉宝宝对不起</title>
+<meta name="description" content="写给雪愉宝宝的一封道歉信：五个瞬间，四件错事，一封信，和五个以后的约定。">
+<meta name="theme-color" content="#6e2b38">
+<meta property="og:title" content="雪愉宝宝对不起">
+<meta property="og:description" content="五个瞬间，四件错事，一封信，和五个以后的约定。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --paper:#faf5ef;
+    --paper-deep:#f2e6dc;
+    --card:#fffdfa;
+    --ink:#3b2f2d;
+    --muted:#86726b;
+    --rose:#b4586a;
+    --rose-soft:#e9c9cd;
+    --wine:#6e2b38;
+    --wine-deep:#4a1a24;
+    --gold:#c2a06b;
+    --line:rgba(110,43,56,.14);
+    --shadow:0 18px 44px -18px rgba(74,26,36,.35);
+    --serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.9;
+    background:
+      radial-gradient(1200px 600px at 8% -5%, #fff 0%, rgba(255,255,255,0) 60%),
+      radial-gradient(900px 500px at 100% 12%, #f8e9e4 0%, rgba(248,233,228,0) 65%),
+      linear-gradient(180deg,#faf5ef 0%,#f7eee7 100%);
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--rose-soft);color:var(--wine);}
+  a{color:var(--wine);text-decoration:none;}
+  img{display:block;max-width:100%;}
+
+  /* 阅读进度 */
+  #progress{
+    position:fixed;top:0;left:0;height:2px;width:0;
+    background:linear-gradient(90deg,var(--gold),var(--rose));
+    z-index:100;transition:width .12s linear;
+  }
+
+  /* 顶部导航 */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(150%) blur(12px);
+    -webkit-backdrop-filter:saturate(150%) blur(12px);
+    background:rgba(250,245,239,.82);
+    border-bottom:1px solid rgba(110,43,56,.08);
+  }
+  .nav-inner{
+    max-width:720px;margin:0 auto;padding:10px 18px;
+    display:flex;align-items:center;gap:6px;justify-content:space-between;
+  }
+  .nav-brand{
+    font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--wine);
+    white-space:nowrap;
+  }
+  .nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links a{
+    font-size:12.5px;color:var(--muted);padding:6px 8px;border-radius:999px;white-space:nowrap;
+    transition:.25s;
+  }
+  .nav-links a:active{background:var(--paper-deep);color:var(--wine);}
+
+  /* 封面 */
+  .hero{
+    position:relative;min-height:92vh;min-height:92svh;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    overflow:hidden;isolation:isolate;color:#fff;
+  }
+  .hero-img{
+    position:absolute;inset:0;z-index:-2;width:100%;height:100%;
+    object-fit:cover;object-position:center;
+    filter:saturate(.9) contrast(1.02);
+    animation:heroZoom 18s ease-out forwards;
+  }
+  @keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(180deg,rgba(42,12,19,.34) 0%,rgba(52,16,24,.30) 38%,rgba(58,18,26,.86) 100%),
+      radial-gradient(90% 60% at 50% 45%,rgba(0,0,0,0) 0%,rgba(40,10,16,.45) 100%);
+  }
+  .hero-content{
+    position:relative;max-width:720px;width:100%;margin:0 auto;
+    padding:0 26px calc(56px + env(safe-area-inset-bottom));
+  }
+  .hero-kicker{
+    display:flex;align-items:center;gap:12px;
+    font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:#f3d9d6;
+    margin-bottom:18px;
+  }
+  .hero-kicker::before{content:"";width:34px;height:1px;background:rgba(243,217,214,.6);}
+  .hero-title{
+    margin:0;
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(46px,12.4vw,88px);
+    line-height:1.08;letter-spacing:.06em;
+    text-shadow:0 6px 30px rgba(30,6,12,.4);
+  }
+  .hero-title .hollow{
+    display:block;
+    -webkit-text-stroke:1px rgba(255,238,236,.9);
+    color:transparent;
+    font-size:.78em;letter-spacing:.2em;margin-top:8px;
+  }
+  .hero-sub{
+    margin-top:22px;font-family:var(--serif);
+    font-size:15.5px;line-height:1.9;color:#f6e3df;letter-spacing:.03em;
+    max-width:30em;
+  }
+  .hero-meta{
+    margin-top:30px;display:flex;align-items:center;gap:14px;
+    font-size:12px;letter-spacing:.18em;color:#e6c5c2;
+  }
+  .hero-meta span.dot{width:4px;height:4px;border-radius:50%;background:var(--gold);}
+  .hero-scroll{
+    position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+    font-size:10.5px;letter-spacing:.3em;color:rgba(255,240,238,.7);
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+  }
+  .hero-scroll::after{
+    content:"";width:1px;height:26px;
+    background:linear-gradient(180deg,rgba(255,240,238,.7),rgba(255,240,238,0));
+    animation:drop 1.8s ease-in-out infinite;
+  }
+  @keyframes drop{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+  .petal{
+    position:absolute;top:-8%;width:9px;height:9px;border-radius:60% 10% 60% 10%;
+    background:rgba(255,214,214,.55);animation:fall linear infinite;z-index:0;
+  }
+  @keyframes fall{
+    0%{transform:translate3d(0,0,0) rotate(0deg);opacity:0}
+    10%{opacity:.7}
+    100%{transform:translate3d(60px,112vh,0) rotate(280deg);opacity:0}
+  }
+
+  /* 通用区块 */
+  .wrap{max-width:720px;margin:0 auto;padding:0 26px;}
+  section{padding:76px 0;scroll-margin-top:78px;}
+  .sec-head{margin-bottom:34px;}
+  .sec-no{
+    display:block;font-family:var(--serif);font-size:12px;letter-spacing:.32em;
+    color:var(--gold);margin-bottom:12px;
+  }
+  .sec-title{
+    margin:0;font-family:var(--serif);font-weight:600;
+    font-size:clamp(27px,6.4vw,36px);letter-spacing:.06em;line-height:1.35;color:var(--wine);
+  }
+  .sec-title small{
+    display:block;font-family:var(--sans);font-weight:400;font-size:12.5px;
+    letter-spacing:.16em;color:var(--muted);margin-top:10px;
+  }
+  .rule{height:1px;background:linear-gradient(90deg,var(--line),rgba(110,43,56,0));margin-top:18px;}
+
+  /* 序 */
+  .intro{padding-top:64px;}
+  .intro-text{font-family:var(--serif);font-size:18px;line-height:2.1;letter-spacing:.02em;}
+  .intro-text p{margin:0 0 1.15em;}
+  .intro-text p:first-child::first-letter{
+    float:left;font-size:3.05em;line-height:.92;padding:6px 10px 0 0;color:var(--rose);
+    font-weight:600;
+  }
+  .intro-sign{
+    margin-top:26px;display:flex;align-items:center;gap:10px;
+    font-size:12px;letter-spacing:.16em;color:var(--muted);
+  }
+  .intro-sign i{display:block;width:26px;height:1px;background:var(--line);}
+  .quote{
+    margin:34px 0 0;padding:20px 22px;border-left:2px solid var(--rose-soft);
+    background:rgba(255,255,255,.5);border-radius:0 12px 12px 0;
+    font-family:var(--serif);font-size:16.5px;line-height:2;color:var(--wine);
+  }
+  .quote span{display:block;font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;color:var(--muted);margin-top:10px;}
+
+  /* 五个瞬间 */
+  .moments{display:flex;flex-direction:column;gap:38px;}
+  .moment{
+    position:relative;background:var(--card);padding:12px 12px 22px;
+    border-radius:3px;box-shadow:var(--shadow);
+    transform:rotate(-1deg);
+    transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s;
+  }
+  .moment:nth-child(even){transform:rotate(1deg);}
+  .moment::after{
+    content:"";position:absolute;inset:0;pointer-events:none;border-radius:3px;
+    background:linear-gradient(120deg,rgba(255,255,255,.5),rgba(255,255,255,0) 40%);
+    mix-blend-mode:screen;
+  }
+  .moment figure{margin:0;position:relative;overflow:hidden;border-radius:2px;}
+  .moment img{
+    width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;
+    filter:saturate(.94) contrast(1.03);
+    transition:transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .moment.landscape img{aspect-ratio:4/3;}
+  .moment figcaption{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:14px 6px 0;font-size:11px;letter-spacing:.18em;color:var(--muted);
+  }
+  .moment .cap{color:var(--wine);}
+  .moment h3{
+    margin:8px 6px 0;font-family:var(--serif);font-weight:600;
+    font-size:21px;line-height:1.5;letter-spacing:.04em;color:var(--ink);
+  }
+  .moment p{
+    margin:8px 6px 0;font-size:14.5px;line-height:1.95;color:#5c4b46;
+  }
+  .moment .stamp{
+    position:absolute;right:16px;top:16px;z-index:2;
+    width:46px;height:46px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.55);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-size:13px;letter-spacing:.05em;color:#fff;
+    background:rgba(74,26,36,.28);backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+  }
+
+  /* 我的错 */
+  .faults{border-top:1px solid var(--line);}
+  .fault{
+    display:grid;grid-template-columns:46px 1fr;gap:14px;
+    padding:22px 0;border-bottom:1px solid var(--line);
+  }
+  .fault-no{
+    font-family:var(--serif);font-size:15px;letter-spacing:.06em;color:var(--rose);
+    padding-top:2px;
+  }
+  .fault h3{margin:0 0 6px;font-size:16.5px;font-weight:600;letter-spacing:.02em;color:var(--ink);}
+  .fault p{margin:0;font-size:14.5px;line-height:1.95;color:var(--muted);}
+  .faults-note{
+    margin-top:24px;font-family:var(--serif);font-size:16px;line-height:2;
+    color:var(--wine);padding-left:2px;
+  }
+
+  /* 信 */
+  .letter{
+    position:relative;background:
+      linear-gradient(180deg,#fffdf9,#fffaf2);
+    border:1px solid rgba(194,160,107,.34);
+    border-radius:4px;padding:34px 24px 30px;
+    box-shadow:0 24px 60px -30px rgba(74,26,36,.45);
+  }
+  .letter::before{
+    content:"♡";position:absolute;top:14px;left:50%;transform:translateX(-50%);
+    font-size:10px;color:var(--rose-soft);letter-spacing:.4em;
+  }
+  .letter-body{
+    font-family:var(--serif);font-size:16.5px;line-height:2.15;color:#463632;letter-spacing:.015em;
+  }
+  .letter-body p{margin:0 0 1.1em;}
+  .letter-body .salute{
+    font-size:19px;font-weight:600;color:var(--wine);letter-spacing:.08em;margin-bottom:1.2em;
+  }
+  .letter-body em{font-style:normal;color:var(--wine);border-bottom:1px solid var(--rose-soft);}
+  .letter-sign{
+    margin-top:30px;text-align:right;font-family:var(--serif);
+    font-size:16px;line-height:1.9;color:var(--wine);
+  }
+  .letter-sign small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.2em;color:var(--muted);margin-top:6px;}
+
+  /* 约定 */
+  .promises{list-style:none;margin:0;padding:0;counter-reset:p;}
+  .promise{
+    position:relative;display:flex;gap:16px;padding:20px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .promise:last-child{border-bottom:0;}
+  .promise .check{
+    flex:0 0 26px;width:26px;height:26px;margin-top:3px;border-radius:50%;
+    border:1px solid var(--gold);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-size:12px;
+    background:#fffdf8;
+  }
+  .promise h3{margin:0 0 4px;font-size:15.5px;font-weight:600;color:var(--ink);letter-spacing:.02em;}
+  .promise p{margin:0;font-size:13.5px;line-height:1.9;color:var(--muted);}
+  .promise-note{
+    margin-top:26px;font-size:12px;letter-spacing:.08em;color:var(--muted);text-align:center;
+  }
+
+  /* 互动 */
+  .ask{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(120% 120% at 0% 0%,#8a3547 0%,#5d1f2b 55%,#431520 100%);
+    border-radius:8px;padding:40px 24px 32px;color:#fff;
+    box-shadow:0 30px 60px -30px rgba(67,21,32,.7);
+  }
+  .ask::after{
+    content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;
+    border:1px solid rgba(255,235,230,.18);border-radius:50%;
+  }
+  .ask .ask-kicker{font-size:11px;letter-spacing:.3em;color:#e9c3c2;margin-bottom:14px;}
+  .ask h2{
+    margin:0;font-family:var(--serif);font-weight:600;
+    font-size:clamp(23px,6vw,30px);line-height:1.6;letter-spacing:.05em;
+  }
+  .ask p{margin:14px 0 0;font-size:13.5px;line-height:1.9;color:#e6c9c9;}
+  .ask-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;position:relative;z-index:2;}
+  .btn{
+    appearance:none;border:0;cursor:pointer;font-family:var(--sans);
+    font-size:14px;letter-spacing:.04em;padding:13px 20px;border-radius:999px;
+    transition:transform .2s,opacity .2s;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:#fbe9e2;color:var(--wine-deep);font-weight:600;}
+  .btn-ghost{background:transparent;color:#f3d9d6;border:1px solid rgba(243,217,214,.45);}
+  .answer{
+    margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,235,230,.2);
+    font-family:var(--serif);font-size:15.5px;line-height:2;color:#fbe9e2;
+    display:none;
+  }
+  .answer.show{display:block;animation:fadeUp .5s ease both;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* 链接 */
+  .links{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+  .link-row{
+    display:flex;align-items:center;gap:14px;
+    padding:18px 2px;border-bottom:1px solid var(--line);
+    color:var(--ink);
+  }
+  .link-row .ico{
+    flex:0 0 34px;width:34px;height:34px;border-radius:50%;
+    background:#fffdf8;border:1px solid rgba(194,160,107,.4);
+    display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--wine);
+  }
+  .link-row .txt{flex:1;min-width:0;}
+  .link-row .txt b{display:block;font-size:15px;font-weight:600;letter-spacing:.02em;}
+  .link-row .txt span{display:block;font-size:12px;color:var(--muted);letter-spacing:.06em;margin-top:2px;}
+  .link-row .arrow{color:var(--rose);font-size:14px;transition:transform .25s;}
+  .link-row:active .arrow{transform:translateX(4px);}
+  .copy-btn{
+    display:block;width:100%;margin-top:26px;padding:15px;
+    background:var(--wine);color:#fbe9e2;border:0;border-radius:6px;
+    font-family:var(--sans);font-size:14.5px;letter-spacing:.12em;cursor:pointer;
+  }
+  .copy-btn:active{opacity:.9;}
+
+  /* 页脚 */
+  footer{
+    margin-top:20px;padding:54px 26px calc(46px + env(safe-area-inset-bottom));
+    background:linear-gradient(180deg,rgba(110,43,56,0),rgba(110,43,56,.07));
+    text-align:center;
+  }
+  .footer-heart{font-size:15px;color:var(--rose);letter-spacing:.5em;margin-bottom:16px;}
+  .footer-title{font-family:var(--serif);font-size:22px;letter-spacing:.1em;color:var(--wine);margin:0 0 10px;}
+  .footer-text{font-size:12px;line-height:2;color:var(--muted);letter-spacing:.1em;}
+  .footer-text a{color:var(--wine);border-bottom:1px solid var(--rose-soft);padding-bottom:1px;}
+
+  /* 提示 */
+  #toast{
+    position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);
+    background:rgba(59,47,45,.94);color:#fff;font-size:12.5px;letter-spacing:.06em;
+    padding:10px 16px;border-radius:999px;opacity:0;pointer-events:none;
+    transition:.25s;z-index:120;white-space:nowrap;max-width:90vw;
+  }
+  #toast.show{opacity:1;transform:translate(-50%,0);}
+
+  /* 出现动画 */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (max-width:420px){
+    .wrap{padding:0 20px;}
+    section{padding:62px 0;}
+    .moment{padding:10px 10px 18px;}
+    .moment h3{font-size:19px;}
+    .moment p{font-size:14px;}
+    .letter{padding:28px 18px 24px;}
+    .letter-body{font-size:16px;line-height:2.05;}
+    .fault{grid-template-columns:38px 1fr;gap:10px;}
+    .hero-content{padding:0 20px 64px;}
+    .hero-sub{font-size:14.5px;}
+    .ask{padding:32px 18px 26px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.001s !important;transition-duration:.001s !important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="nav" aria-label="页内导航">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">雪愉 · 对不起</a>
+    <div class="nav-links">
+      <a href="#intro">序</a>
+      <a href="#moments">五个瞬间</a>
+      <a href="#faults">我的错</a>
+      <a href="#letter">这封信</a>
+      <a href="#promises">约定</a>
+      <a href="#ask">回答我</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="hero-img" src="assets/hero.jpg" alt="暖色灯光的夜晚" fetchpriority="high">
+  <span class="petal" style="left:14%;animation-duration:13s;animation-delay:1s"></span>
+  <span class="petal" style="left:32%;animation-duration:17s;animation-delay:5s;width:6px;height:6px"></span>
+  <span class="petal" style="left:68%;animation-duration:15s;animation-delay:2s"></span>
+  <span class="petal" style="left:86%;animation-duration:19s;animation-delay:7s;width:7px;height:7px"></span>
+  <div class="hero-content">
+    <div class="hero-kicker">A letter for you</div>
+    <h1 class="hero-title">
+      雪愉宝宝
+      <span class="hollow">对不起</span>
+    </h1>
+    <p class="hero-sub">这五张照片里的每一个你，我都想好好珍惜。<br>可我最近偏偏把最不好的样子，留给了最好的你。</p>
+    <div class="hero-meta">
+      <span>2026 · 11 · 03</span>
+      <span class="dot"></span>
+      <span>写给雪愉的一封长信</span>
+    </div>
+  </div>
+  <div class="hero-scroll">向下读</div>
+</header>
+
+<main>
+  <!-- 序 -->
+  <section class="intro" id="intro">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-no">序 · PROLOGUE</span>
+        <h2 class="sec-title">先把这些好，认真看一遍<small>然后，我才敢说那句对不起</small></h2>
+        <div class="rule"></div>
+      </div>
+      <div class="intro-text reveal">
+        <p>这五张照片，是我们最普通、也最舍不得的五个瞬间。没有刻意的布景，没有摆好的姿势，就是你和我，在很平常的日子里，刚好被镜头留下。</p>
+        <p>我把它们放在这封信的最前面，是想先提醒自己：我拥有的这些好，从来都不是理所当然的。你会笑、会闹、会靠过来、会把头歪向我，这些都是你愿意，才有的。</p>
+        <p>然后，才敢说那句我一直没说好的话——<br>雪愉宝宝，对不起。</p>
+      </div>
+      <div class="intro-sign reveal"><i></i>写在第 1 天，也写在以后每一天</div>
+      <div class="quote reveal">
+        「我不是想赢过你，我只是想重新站在你这边。」
+        <span>—— 这句话，我练习了很多遍</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 五个瞬间 -->
+  <section id="moments">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-no">01 · FIVE MOMENTS</span>
+        <h2 class="sec-title">我们的五个瞬间<small>照片会旧，我记得的不会</small></h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="moments">
+        <article class="moment reveal">
+          <span class="stamp">01</span>
+          <figure>
+            <img src="assets/moment1.jpg" alt="试衣间里并排挂着两件一样的白T恤" loading="lazy">
+            <figcaption><span class="cap">试衣间</span><span>那天的白 T 恤</span></figcaption>
+          </figure>
+          <h3>穿一样的衣服，比一样的心</h3>
+          <p>你举着手比心，我举着手机拍镜子。两件一模一样的白 T，连笑都像商量好的。那天我嘴上嫌幼稚，其实心里偷偷高兴了很久——原来和一个人穿一样的衣服，是这么值得炫耀的事。</p>
+        </article>
+
+        <article class="moment reveal">
+          <span class="stamp">02</span>
+          <figure>
+            <img src="assets/moment2.jpg" alt="餐厅桌上吃得只剩一点酱的意面" loading="lazy">
+            <figcaption><span class="cap">那家小餐厅</span><span>一盘吃光的意面</span></figcaption>
+          </figure>
+          <h3>最普通的一顿饭，我记得最久</h3>
+          <p>盘子里只剩一点番茄酱，叉子还搭在边上。你戴着小帽子，我穿着那件高领毛衣挤在你旁边自拍。我们没去多贵的地方，可那顿饭我记到现在——因为对面坐着的人是你。</p>
+        </article>
+
+        <article class="moment landscape reveal">
+          <span class="stamp">03</span>
+          <figure>
+            <img src="assets/moment3.jpg" alt="车厢里靠窗的座位和窗外的站台" loading="lazy">
+            <figcaption><span class="cap">车厢里</span><span>靠在你肩上的那一程</span></figcaption>
+          </figure>
+          <h3>那趟车，我真心希望它慢一点</h3>
+          <p>你戴黑框眼镜，托着脸，我把脸贴过去亲你。窗外的站台一格一格往后退，我却只想着：再慢一点就好了，这一程再长一点就好了。</p>
+        </article>
+
+        <article class="moment reveal">
+          <span class="stamp">04</span>
+          <figure>
+            <img src="assets/moment4.jpg" alt="古镇夜里亮起的一排排灯笼" loading="lazy">
+            <figcaption><span class="cap">古镇的夜</span><span>绿色旗袍与一排灯笼</span></figcaption>
+          </figure>
+          <h3>你回头的时候，灯都亮了</h3>
+          <p>灯笼一排排亮起来，你穿那件绿旗袍，头发垂在肩上。我站在你后面，其实一直在看你。那会儿我心里想的是：怎么会有这么好看的人，愿意跟我站在一起。</p>
+        </article>
+
+        <article class="moment reveal">
+          <span class="stamp">05</span>
+          <figure>
+            <img src="assets/moment5.jpg" alt="山间栏杆上的一朵白花和远处的灯火" loading="lazy">
+            <figcaption><span class="cap">山上</span><span>你头上的那朵白花</span></figcaption>
+          </figure>
+          <h3>你头上那朵花，比山下的灯好看</h3>
+          <p>你头上别了朵白花，手托着脸，我凑过去亲你。山脚下的灯一盏盏亮起来，我那天只顾着看你，风景反而成了背景。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 我的错 -->
+  <section id="faults">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-no">02 · MY FAULT</span>
+        <h2 class="sec-title">我把哪里做错了<small>不找借口，只说事实</small></h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="faults">
+        <div class="fault reveal">
+          <div class="fault-no">一</div>
+          <div>
+            <h3>把最坏的脾气，留给了最亲的你</h3>
+            <p>对外人客客气气，回家却一句就急。你明明是最不该被我凶的人，我却总把耐心用完在外面。</p>
+          </div>
+        </div>
+        <div class="fault reveal">
+          <div class="fault-no">二</div>
+          <div>
+            <h3>你难过的时候，我先忙着解释自己</h3>
+            <p>你要的是被抱一下、被站在你这边，我却急着证明「我不是那个意思」。道理讲赢了，你更远了。</p>
+          </div>
+        </div>
+        <div class="fault reveal">
+          <div class="fault-no">三</div>
+          <div>
+            <h3>答应的小事，被我放进了「等会儿」</h3>
+            <p>不是做不到，是没放在心上。可感情就是被这些「等会儿」一点点磨薄的。</p>
+          </div>
+        </div>
+        <div class="fault reveal">
+          <div class="fault-no">四</div>
+          <div>
+            <h3>把你的包容，当成了不会离开</h3>
+            <p>你一次次先低头、先说话、先原谅，我就真的以为没关系。忘了你也会累，也会需要被哄。</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="faults-note reveal">这四件事，没有一件是「因为你」。<br>都是我该改的。</p>
+    </div>
+  </section>
+
+  <!-- 这封信 -->
+  <section id="letter">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-no">03 · THE LETTER</span>
+        <h2 class="sec-title">这封信，只写给你<small>你可以慢慢看，也可以先不看</small></h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="letter reveal">
+        <div class="letter-body">
+          <p class="salute">雪愉宝宝：</p>
+          <p>对不起。</p>
+          <p>这三个字我在心里说过很多遍。可每次真的到你面前，它就变成了辩解、沉默，或者一句干巴巴的「我不是这个意思」。后来我才明白，你要的从来不是我把道理讲赢，而是我<em>站在你这边</em>。</p>
+          <p>我知道「对不起」很轻。轻到说出来像一阵风，吹过去就没了。所以我把想说的话放在这里——它不会跟着时间消失，你什么时候想翻，它都在；你哪一天还生气，也可以回来再看一遍，看我是不是真的做到了。</p>
+          <p>我承认我不够细心。你情绪不对的时候，我总要过很久才发现；你说「没事」的时候，我居然真的就信了。以后我会记住：你说没事，多半是有事；你不说话，多半是在等我先开口。</p>
+          <p>我也想跟你说清楚，我难过的不是「吵架」这件事，是吵完之后那几天的我们。你回消息变短，我不敢多问；明明两个人都还在意，却谁都不肯先软下来。那种感觉，我不想再经历第二次了。</p>
+          <p>所以这次我不说「以后不会了」这种空话。我只说我能做到的：<em>先听你说完，再讲我的想法；当天的事当天说清楚；答应的每一件小事，做到再说。</em></p>
+          <p>雪愉宝宝，我不奢望你立刻就原谅我。你可以生气，可以不理我，可以把这几天的委屈都留到想说的时候再说。我只希望你知道，我没有走，也没有觉得你麻烦。</p>
+          <p>我在这儿，等你。</p>
+        </div>
+        <div class="letter-sign">
+          你的笨蛋
+          <small>2026.11.03 · 夜里写的</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 约定 -->
+  <section id="promises">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-no">04 · PROMISES</span>
+        <h2 class="sec-title">以后的五个约定<small>不是说说，是要你随时来检查的</small></h2>
+        <div class="rule"></div>
+      </div>
+
+      <ul class="promises">
+        <li class="promise reveal">
+          <span class="check">✓</span>
+          <div>
+            <h3>先听完，再开口</h3>
+            <p>你说不舒服的时候，我先停下来听，不急着解释，也不急着证明自己没错。</p>
+          </div>
+        </li>
+        <li class="promise reveal">
+          <span class="check">✓</span>
+          <div>
+            <h3>不冷战，不隔夜</h3>
+            <p>有情绪就说，说不清楚就先抱一下。当天的疙瘩，当天解开，不留到第二天。</p>
+          </div>
+        </li>
+        <li class="promise reveal">
+          <span class="check">✓</span>
+          <div>
+            <h3>答应的事，写进备忘录</h3>
+            <p>大到一起去的地方，小到你随口说想吃的店，都记下来，做到了再提。</p>
+          </div>
+        </li>
+        <li class="promise reveal">
+          <span class="check">✓</span>
+          <div>
+            <h3>每周留一个晚上给我们</h3>
+            <p>不被工作、手机和别的事占走。吃饭、散步、看剧都行，只要你在我旁边。</p>
+          </div>
+        </li>
+        <li class="promise reveal">
+          <span class="check">✓</span>
+          <div>
+            <h3>先道歉，再讲道理</h3>
+            <p>讲不赢也没关系。你比道理重要，这句话我以后用做的，不用说的。</p>
+          </div>
+        </li>
+      </ul>
+      <p class="promise-note reveal">以上五条，有效期：很久很久。</p>
+    </div>
+  </section>
+
+  <!-- 回答我 -->
+  <section id="ask">
+    <div class="wrap">
+      <div class="ask reveal">
+        <div class="ask-kicker">ONE QUESTION</div>
+        <h2>雪愉宝宝，<br>愿意再给我一次机会吗？</h2>
+        <p>不用现在就回答。你点哪一个，我都认真接住。</p>
+        <div class="ask-actions">
+          <button class="btn btn-primary" type="button" data-answer="yes">愿意，再看你一次</button>
+          <button class="btn btn-ghost" type="button" data-answer="no">我还在生气</button>
+        </div>
+        <div class="answer" id="answer" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 链接 -->
+  <section id="more" style="padding-top:20px;padding-bottom:20px;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-no">05 · STILL HERE</span>
+        <h2 class="sec-title">还有几条路，能走到我这里<small>你想用哪一种，都行</small></h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="links reveal">
+        <a class="link-row" href="#top">
+          <span class="ico">↑</span>
+          <span class="txt"><b>回到最开始</b><span>再看一眼那五张照片</span></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-row" href="#letter">
+          <span class="ico">✉</span>
+          <span class="txt"><b>重新读这封信</b><span>有些话，第二遍才看得进去</span></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-row" href="https://music.163.com/" target="_blank" rel="noopener noreferrer">
+          <span class="ico">♫</span>
+          <span class="txt"><b>去听一首歌</b><span>有些话说不出口，就一起听</span></span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="link-row" href="https://www.amap.com/" target="_blank" rel="noopener noreferrer">
+          <span class="ico">◎</span>
+          <span class="txt"><b>看看我们说过要去的地方</b><span>下一次，由我来安排</span></span>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <button class="copy-btn" type="button" id="copyLink">复制这个网页的链接</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-heart">♡ ♡ ♡</div>
+  <p class="footer-title">雪愉宝宝，对不起</p>
+  <p class="footer-text">
+    这页会一直在这里，等你不生气了，也等你想我了。<br>
+    如果链接打不开，回到 <a href="#top">这里</a> 再看一遍。<br>
+    2026 · 11 · 03
+  </p>
+</footer>
+
+<div id="toast" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  // 滚动进度
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var y = window.scrollY || document.documentElement.scrollTop;
+    bar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // 出现动画
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // 问答
+  var answer = document.getElementById('answer');
+  var messages = {
+    yes: '谢谢你，雪愉宝宝。<br>我知道原谅不是一句话的事，所以我不急着庆祝，我会用往后的每一天，把这句话慢慢兑现。',
+    no: '没关系，生气是应该的。<br>我不催你，也不辩解。你想说话的时候，我都在；你不想说话的时候，我也在。'
+  };
+  function hearts(){
+    for (var i = 0; i < 10; i++){
+      (function(n){
+        setTimeout(function(){
+          var s = document.createElement('span');
+          s.textContent = '♥';
+          s.style.cssText = 'position:fixed;left:' + (20 + Math.random()*60) + 'vw;bottom:-20px;color:#e8899a;font-size:' + (12 + Math.random()*16) + 'px;z-index:110;pointer-events:none;transition:transform 1.6s ease-out,opacity 1.6s ease-out;opacity:1;';
+          document.body.appendChild(s);
+          requestAnimationFrame(function(){
+            s.style.transform = 'translateY(-' + (60 + Math.random()*30) + 'vh) rotate(' + (Math.random()*60-30) + 'deg)';
+            s.style.opacity = '0';
+          });
+          setTimeout(function(){ s.remove(); }, 1800);
+        }, n * 90);
+      })(i);
+    }
+  }
+  document.querySelectorAll('[data-answer]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var key = btn.getAttribute('data-answer');
+      answer.innerHTML = messages[key];
+      answer.classList.remove('show');
+      void answer.offsetWidth;
+      answer.classList.add('show');
+      hearts();
+    });
+  });
+
+  // 提示
+  var toast = document.getElementById('toast');
+  var toastTimer;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2200);
+  }
+
+  // 复制链接
+  var copyBtn = document.getElementById('copyLink');
+  if (copyBtn){
+    copyBtn.addEventListener('click', function(){
+      var url = location.href;
+      function fallback(){
+        var ta = document.createElement('textarea');
+        ta.value = url;
+        ta.style.position = 'fixed';
+        ta.style.top = '-1000px';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, 99999);
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch(e){}
+        ta.remove();
+        showToast(ok ? '链接已复制，去微信发给她吧' : '复制失败，长按页面链接手动复制');
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(function(){
+          showToast('链接已复制，去微信发给她吧');
+        }).catch(fallback);
+      } else {
+        fallback();
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
